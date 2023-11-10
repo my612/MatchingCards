@@ -30,6 +30,7 @@ Playing::Playing()
     //add cursor to the scene ----
 
   //add the openings counter
+    openings=0;
     openingsText = new QGraphicsTextItem();
     openingsText->setDefaultTextColor(Qt::red);
     openingsText->setPos(10,10);
@@ -45,6 +46,7 @@ Playing::Playing()
     scoreText->setFont(QFont("times",16));
     scoreText->setPlainText("Score: " + QString::number(openings));
     scene->addItem(scoreText);
+
 
 
     view->show();
@@ -73,17 +75,18 @@ void Playing::flip(int x, int y)
     lastFlippedImages[0] = lastFlippedImages[1];
     lastFlippedImages[1] = &images[y][x];
 }
-
+//the game over item
 void Playing::gameOver() {
-
+  //  view->setVisible(false);
     QGraphicsTextItem* gameOverText = new QGraphicsTextItem();
     gameOverText->setDefaultTextColor(Qt::red);
-    openingsText->setFont(QFont("times",16));
-    openingsText->setPlainText("Game Over! ");
-    gameOverText->setPos(50,10);
-    scene->addItem(gameOverText);
+    gameOverText->setFont(QFont("times",30));
+    gameOverText->setPlainText("Game Over! ");
+    gameOverText->setPos(100,100);
 
-    view->show();
+   /* scene->clear(); // clear the scene
+    scene->addItem(gameOverText); // add game over message to the scene
+    view->show();*/
 }
 
 

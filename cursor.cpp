@@ -1,5 +1,7 @@
 #include "cursor.h"
 #include<QKeyEvent>
+#include<QGraphicsItem>
+#include<QGraphicsWidget>
 
 
 cursor::cursor(Playing*  playinview)
@@ -7,13 +9,14 @@ cursor::cursor(Playing*  playinview)
     rowindex=0;
     colindex=-1;
 
+
     QPixmap thing("B:\\Fall 23\\CS2 credit lab\\QT assignment\\MatchingCards\\img0.png");
     thing = thing.scaledToHeight(40);
     thing = thing.scaledToWidth(80);
     setPixmap(thing);
     playwindow = playinview;
 
-//"B:\Fall 23\CS2 credit lab\QT assignment\MatchingCards\img0.png"
+//"B:\Fall 23\CS2 credit lab\QT assignment\MatchingCards\img0.png" file path for me
 }
 void cursor::keyPressEvent(QKeyEvent* event){
 
@@ -47,7 +50,8 @@ void cursor::keyPressEvent(QKeyEvent* event){
         playwindow->flip(rowindex,colindex);
         playwindow->setCards();
         playwindow->showPix();
-        //playwindow->hidePic(colindex,rowindex);
+        //setvisible
+      //  playwindow->hidePic(colindex,rowindex);
         if(playwindow->ismatched()){
             (playwindow->score)++;
             (playwindow->scoreText)->setPlainText("Score: " + QString::number(playwindow->score));
