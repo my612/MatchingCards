@@ -4,7 +4,8 @@
 Playing::Playing()
 {
 
-
+    images[0][1].setFront(3);
+    images[0][3].setFront(2);
     setToBack();
     scene = new QGraphicsScene();
     setCards();
@@ -44,7 +45,7 @@ void Playing::setToBack()
 }
 void Playing::flip(int x, int y)
 {
-    images[x][y].flip();
+    images[y][x].flip();
 }
 QPixmap Playing::render(int i)
 {//"img" + QString::number(i) + ".png"
@@ -61,6 +62,8 @@ void Playing :: setCards()
             cards[i][j].setPixmap(card);
         }
 }
+
+
 
 
 void Playing::readimgdata()
@@ -80,6 +83,26 @@ void Playing::readimgdata()
         }
     }
     file.close();
+
+
+}
+void Playing::writeimgdata(){
+    QFile file("M:\\MatchingCards\\MatchingCards\\imgdata.txt");
+    file.open(QIODevice::WriteOnly | QIODevice::Text);
+    QTextStream stream(&file); // link the writing stream to your file
+
+    for (int i = 0; i < ROWS; i++)
+    {
+        for (int j = 0; j < COLS; j++)
+        {
+            stream << (QString::number(imagesdata[i][j]) + " "); // write the data after converting it to a QString
+        }
+        stream << "\n";//add a new line after every row
+    }
+    file.close();
+
+
+
 
 
 }

@@ -23,6 +23,7 @@ public:
     void setToBack();
     QPixmap render(int i);
     void setCards();
+    void writeimgdata();
     void showPix();
     void hidePic(int x, int y);
     void readimgdata();

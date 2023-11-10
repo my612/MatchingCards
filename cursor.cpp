@@ -46,9 +46,16 @@ void cursor::keyPressEvent(QKeyEvent* event){
    else if(event->key()==Qt::Key_Space){
         playwindow->flip(rowindex,colindex);
         playwindow->setCards();
-        playwindow->hidePic(colindex,rowindex);
+        playwindow->showPix();
+        //playwindow->hidePic(colindex,rowindex);
     }
 
 
 
+
 }
+
+
+
+
+
