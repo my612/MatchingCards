@@ -6,6 +6,8 @@
 #include <QGraphicsObject>
 #include <QGraphicsView>
 #include <QGraphicsPixmapItem>
+#include <QFile>
+#include <QTextStream>
 #define ROWS 6
 #define COLS 6
 
@@ -23,9 +25,11 @@ public:
     void setCards();
     void showPix();
     void hidePic(int x, int y);
+    void readimgdata();
     //    ~Playing();
 
 private:
+    int imagesdata[ROWS][COLS];
     Image images[ROWS][COLS];
     QGraphicsPixmapItem cards[ROWS][COLS];
     QGraphicsView* view;

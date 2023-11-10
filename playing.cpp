@@ -61,6 +61,30 @@ void Playing :: setCards()
             cards[i][j].setPixmap(card);
         }
 }
+
+
+void Playing::readimgdata()
+{
+
+    QFile file("M:\\MatchingCards\\MatchingCards\\imgdata.txt");
+    file.open(QIODevice::ReadOnly);
+    QTextStream stream(&file);
+
+    QString input;
+    for (int i = 0; i < ROWS; i++)
+    {
+        for (int j = 0; j < COLS; j++)
+        {
+            stream >> input;
+            imagesdata[i][j] = input.toInt();
+        }
+    }
+    file.close();
+
+
+}
+
+
 void Playing::showPix()
 {
     for(int i = 0; i < ROWS;i++)
