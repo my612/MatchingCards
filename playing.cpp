@@ -4,7 +4,7 @@
 Playing::Playing()
 {
 
-    images[0][1].setFront(3);
+    images[0][1].setFront(2);
     images[0][3].setFront(2);
     setToBack();
     scene = new QGraphicsScene();
@@ -23,14 +23,31 @@ Playing::Playing()
     cursor1->setFlag(QGraphicsItem::ItemIsFocusable);
     cursor1->setFocus();
 
-    view->show();
 
     //set the focus
 
 
     //add cursor to the scene ----
 
+  //add the openings counter
+    openingsText = new QGraphicsTextItem();
+    openingsText->setDefaultTextColor(Qt::red);
+    openingsText->setPos(10,10);
+    openingsText->setFont(QFont("times",16));
+    openingsText->setPlainText("Openings: " + QString::number(openings));
+    scene->addItem(openingsText);
 
+    //add the score counter
+
+    scoreText = new QGraphicsTextItem();
+    scoreText->setDefaultTextColor(Qt::blue);
+    scoreText->setPos(400,10);
+    scoreText->setFont(QFont("times",16));
+    scoreText->setPlainText("Score: " + QString::number(openings));
+    scene->addItem(scoreText);
+
+
+    view->show();
 
 }
 void Playing::hidePic(int x, int y)
@@ -45,11 +62,40 @@ void Playing::setToBack()
 }
 void Playing::flip(int x, int y)
 {
-    images[y][x].flip();
+    images[y][x].flip(); //rows and cols switched
+
+    if(openings >40){
+        gameOver();
+    }else{
+        openings++;
+    }
+    openingsText->setPlainText("Openings: " + QString::number(openings));
+    lastFlippedImages[0] = lastFlippedImages[1];
+    lastFlippedImages[1] = &images[y][x];
+}
+
+void Playing::gameOver() {
+
+    QGraphicsTextItem* gameOverText = new QGraphicsTextItem();
+    gameOverText->setDefaultTextColor(Qt::red);
+    openingsText->setFont(QFont("times",16));
+    openingsText->setPlainText("Game Over! ");
+    gameOverText->setPos(50,10);
+    scene->addItem(gameOverText);
+
+    view->show();
+}
+
+
+bool Playing::ismatched(){
+    if (lastFlippedImages[0] == lastFlippedImages[1]) {
+        return true;
+    }
+    return false;
 }
 QPixmap Playing::render(int i)
 {//"img" + QString::number(i) + ".png"
-    return QPixmap("M:\\MatchingCards\\MatchingCards\\img" + QString::number(i) + ".png");
+    return QPixmap("B:\\Fall 23\\CS2 credit lab\\QT assignment\\MatchingCards\\img" + QString::number(i) + ".png");
 }
 void Playing :: setCards()
 {

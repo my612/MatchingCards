@@ -27,6 +27,19 @@ public:
     void showPix();
     void hidePic(int x, int y);
     void readimgdata();
+
+    int openings=0;
+    QGraphicsTextItem* openingsText;
+
+    int score = 0;
+
+    QGraphicsTextItem* scoreText;
+    //game logic implemented
+
+    Image* lastFlippedImages[2] = {nullptr, nullptr};
+    bool ismatched();
+
+    void gameOver();
     //    ~Playing();
 
 private:

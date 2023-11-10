@@ -7,13 +7,13 @@ cursor::cursor(Playing*  playinview)
     rowindex=0;
     colindex=-1;
 
-    QPixmap thing("M:\\MatchingCards\\MatchingCards\\img0.png");
+    QPixmap thing("B:\\Fall 23\\CS2 credit lab\\QT assignment\\MatchingCards\\img0.png");
     thing = thing.scaledToHeight(40);
     thing = thing.scaledToWidth(80);
     setPixmap(thing);
     playwindow = playinview;
 
-
+//"B:\Fall 23\CS2 credit lab\QT assignment\MatchingCards\img0.png"
 }
 void cursor::keyPressEvent(QKeyEvent* event){
 
@@ -48,6 +48,10 @@ void cursor::keyPressEvent(QKeyEvent* event){
         playwindow->setCards();
         playwindow->showPix();
         //playwindow->hidePic(colindex,rowindex);
+        if(playwindow->ismatched()){
+            (playwindow->score)++;
+            (playwindow->scoreText)->setPlainText("Score: " + QString::number(playwindow->score));
+        }
     }
 
 
