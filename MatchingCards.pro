@@ -1,4 +1,6 @@
 QT       += core gui
+QT += core gui widgets network
+
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -10,19 +12,32 @@ CONFIG += c++17
 
 SOURCES += \
     cursor.cpp \
+    gameover.cpp \
     image.cpp \
     main.cpp \
     mainwindow.cpp \
-    playing.cpp
+    playing.cpp\
+    loginwindow.cpp\
+    users.cpp
 
 HEADERS += \
     cursor.h \
+    gameover.h \
     image.h \
     mainwindow.h \
-    playing.h
+    playing.h\
+    loginwindow.h\
+    users.h
 
 FORMS += \
-    mainwindow.ui
+    gameover.ui \
+    mainwindow.ui\
+    loginwindow.ui
+
+
+
+
+
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

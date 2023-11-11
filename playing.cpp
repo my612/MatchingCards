@@ -1,5 +1,6 @@
 #include "playing.h"
 #include"cursor.h"
+#include "gameover.h"
 
 Playing::Playing()
 {
@@ -19,6 +20,7 @@ Playing::Playing()
     view->setScene(scene);
     cursor1->setPos(5,40);
     scene->addItem(cursor1);
+
 
     cursor1->setFlag(QGraphicsItem::ItemIsFocusable);
     cursor1->setFocus();
@@ -49,6 +51,7 @@ Playing::Playing()
 
     view->show();
 
+
 }
 void Playing::hidePic(int x, int y)
 {
@@ -76,7 +79,7 @@ void Playing::flip(int x, int y)
 
 void Playing::gameOver() {
 
-    QGraphicsTextItem* gameOverText = new QGraphicsTextItem();
+   /* QGraphicsTextItem* gameOverText = new QGraphicsTextItem();
     gameOverText->setDefaultTextColor(Qt::red);
     openingsText->setFont(QFont("times",16));
     openingsText->setPlainText("Game Over! ");
@@ -84,6 +87,12 @@ void Playing::gameOver() {
     scene->addItem(gameOverText);
 
     view->show();
+*/
+    view->hide();
+    gover = new Gameover;
+    gover->show();
+
+
 }
 
 
@@ -95,7 +104,7 @@ bool Playing::ismatched(){
 }
 QPixmap Playing::render(int i)
 {//"img" + QString::number(i) + ".png"
-    return QPixmap("B:\\Fall 23\\CS2 credit lab\\QT assignment\\MatchingCards\\img" + QString::number(i) + ".png");
+    return QPixmap("M:\\MatchingCards\\MatchingCards\\img" + QString::number(i) + ".png");
 }
 void Playing :: setCards()
 {
@@ -163,3 +172,4 @@ void Playing::showPix()
             scene->addItem(&cards[i][j]);
         }
 }
+

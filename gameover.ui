@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Gameover</class>
+ <widget class="QDialog" name="Gameover">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>687</width>
+    <height>493</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QLineEdit" name="endgame">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>110</y>
+     <width>241</width>
+     <height>221</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 700 26pt &quot;Segoe UI&quot;;
+</string>
+   </property>
+   <property name="text">
+    <string>GAME OVER :(</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

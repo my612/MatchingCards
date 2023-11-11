@@ -7,7 +7,7 @@ cursor::cursor(Playing*  playinview)
     rowindex=0;
     colindex=-1;
 
-    QPixmap thing("B:\\Fall 23\\CS2 credit lab\\QT assignment\\MatchingCards\\img0.png");
+    QPixmap thing("M:\\MatchingCards\\MatchingCards\\img0.png");
     thing = thing.scaledToHeight(40);
     thing = thing.scaledToWidth(80);
     setPixmap(thing);

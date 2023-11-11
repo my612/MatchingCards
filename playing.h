@@ -8,10 +8,14 @@
 #include <QGraphicsPixmapItem>
 #include <QFile>
 #include <QTextStream>
+#include <QGraphicsView>
+
+
 #define ROWS 6
 #define COLS 6
 
 class cursor;
+class Gameover;
 class Playing
 {
     //    Q_OBJECT
@@ -49,6 +53,7 @@ private:
     QGraphicsView* view;
     QGraphicsScene* scene;
     cursor *cursor1;
+    Gameover* gover;
 };
 
 #endif // PLAYING_H
