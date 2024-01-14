@@ -14,6 +14,9 @@ class cursor: public QObject, public QGraphicsPixmapItem
 public:
     cursor(Playing*  playinview);
 
+    bool isFirstClick;
+    bool isSecondClick;
+
 public slots:
   void keyPressEvent(QKeyEvent* event);
 

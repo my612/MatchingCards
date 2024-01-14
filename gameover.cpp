@@ -7,7 +7,7 @@ Gameover::Gameover(QWidget *parent) :
     ui(new Ui::Gameover)
 {
     ui->setupUi(this);
-    ui->endgame->show();
+    ui->gameend->show();
 }
 
 Gameover::~Gameover()

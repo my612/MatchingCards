@@ -13,21 +13,40 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QLineEdit" name="endgame">
+  <widget class="QToolButton" name="gameend">
    <property name="geometry">
     <rect>
-     <x>210</x>
-     <y>110</y>
-     <width>241</width>
-     <height>221</height>
+     <x>200</x>
+     <y>90</y>
+     <width>261</width>
+     <height>201</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">font: 700 26pt &quot;Segoe UI&quot;;
-</string>
+    <string notr="true">font: 700 9pt &quot;Segoe Print&quot;;
+color: rgb(255, 255, 255);
+background-color: rgb(34, 46, 80);</string>
    </property>
    <property name="text">
-    <string>GAME OVER :(</string>
+    <string>Game Over:(</string>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="gameend_2">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>210</y>
+     <width>261</width>
+     <height>201</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 700 9pt &quot;Segoe Print&quot;;
+color: rgb(255, 255, 255);
+background-color: rgb(34, 46, 80);</string>
+   </property>
+   <property name="text">
+    <string>Game Over:(</string>
    </property>
   </widget>
  </widget>

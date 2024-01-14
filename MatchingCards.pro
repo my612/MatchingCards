@@ -13,26 +13,27 @@ CONFIG += c++17
 SOURCES += \
     cursor.cpp \
     gameover.cpp \
-    image.cpp \
     main.cpp \
     mainwindow.cpp \
     playing.cpp\
     loginwindow.cpp\
-    users.cpp
+    users.cpp \
+    won.cpp
 
 HEADERS += \
     cursor.h \
     gameover.h \
-    image.h \
     mainwindow.h \
     playing.h\
     loginwindow.h\
-    users.h
+    users.h \
+    won.h
 
 FORMS += \
     gameover.ui \
     mainwindow.ui\
-    loginwindow.ui
+    loginwindow.ui \
+    won.ui
 
 
 
@@ -46,4 +47,10 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 DISTFILES += \
     .gitignore \
-    img0.png
+
+
+RESOURCES += \
+    imgs/imgs.qrc
+
+
+

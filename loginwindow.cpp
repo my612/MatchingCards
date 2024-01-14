@@ -1,6 +1,10 @@
 #include "loginwindow.h"
 #include "ui_loginwindow.h"
 #include "Users.h"
+#include "playing.h"
+#include <stdexcept>
+
+//Class Playing;
 
 LoginWindow::LoginWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -8,7 +12,7 @@ LoginWindow::LoginWindow(QWidget *parent)
 {
     ui->setupUi(this);
     ui->label_3->setVisible(false);
-    QPixmap pix("C:\\Users\\cocoe\\Downloads\\AUC_English_Logo_2021.png");
+    QPixmap pix(":/images/img2.png");
     int w = ui->label_4->width();
     int h = ui->label_4->height();
     ui->label_4->setPixmap(pix.scaled(w , h , Qt::KeepAspectRatio));
@@ -33,9 +37,9 @@ LoginWindow::~LoginWindow()
             if (usernames[i] == enteredUsername && passwords[i] == enteredPassword)
             {
                 loginsuccessful = true;
-
-
                 this->close();
+                Playing* playing= new Playing();
+                playing->view->show();
             }
         }
 
